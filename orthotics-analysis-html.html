@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Анализ рынка Custom Orthotics — Конкурентный аудит SEO и Paid</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --text-soft: #4a4a4a;
+    --accent: #1e3a5f;
+    --accent-soft: #e8eef5;
+    --positive: #2d5a3f;
+    --positive-soft: #e8f0eb;
+    --negative: #b04030;
+    --negative-soft: #f5e8e6;
+    --warning: #b8761a;
+    --warning-soft: #f5ede0;
+    --border: #e5e3dc;
+    --border-strong: #d0cdc4;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* === LAYOUT === */
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* === COVER === */
+  .cover {
+    background: linear-gradient(180deg, #fafaf7 0%, #f0ede6 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 100px 0 80px;
+    margin-bottom: 60px;
+  }
+
+  .cover-eyebrow {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  .cover h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+
+  .cover .subtitle {
+    font-size: 22px;
+    color: var(--text-soft);
+    font-weight: 400;
+    margin-bottom: 48px;
+    max-width: 720px;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .cover-meta div strong {
+    display: block;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  /* === TOC === */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px;
+    margin-bottom: 64px;
+  }
+
+  .toc-title {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .toc ol {
+    list-style: none;
+    columns: 2;
+    column-gap: 48px;
+  }
+
+  .toc li {
+    padding: 6px 0;
+    font-size: 14px;
+    break-inside: avoid;
+  }
+
+  .toc a {
+    color: var(--text-soft);
+    text-decoration: none;
+    transition: color 0.15s;
+    display: flex;
+    gap: 12px;
+  }
+
+  .toc a:hover { color: var(--accent); }
+
+  .toc a .num {
+    color: var(--accent);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    min-width: 24px;
+  }
+
+  /* === SECTIONS === */
+  section {
+    margin-bottom: 80px;
+    scroll-margin-top: 40px;
+  }
+
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    height: 1px;
+    width: 40px;
+    background: var(--accent);
+  }
+
+  h2 {
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+    color: var(--text);
+  }
+
+  h3 {
+    font-size: 22px;
+    line-height: 1.3;
+    font-weight: 600;
+    margin: 36px 0 16px;
+    color: var(--text);
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 24px 0 12px;
+    color: var(--text);
+  }
+
+  p {
+    margin-bottom: 16px;
+    color: var(--text-soft);
+  }
+
+  strong { color: var(--text); font-weight: 600; }
+
+  /* === KPI CARDS === */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 32px 0;
+  }
+
+  .kpi {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+  }
+
+  .kpi-label {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .kpi-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.5px;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+  }
+
+  .kpi-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  .kpi-positive .kpi-value { color: var(--positive); }
+  .kpi-negative .kpi-value { color: var(--negative); }
+
+  /* === TABLES === */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 24px 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  th {
+    text-align: left;
+    padding: 14px 18px;
+    background: #f7f5ef;
+    font-weight: 600;
+    color: var(--text);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border-strong);
+    white-space: nowrap;
+  }
+
+  th.num, td.num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-soft);
+    vertical-align: top;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  tr:hover td { background: #faf8f2; }
+
+  .highlight { color: var(--accent); font-weight: 600; }
+  .pos { color: var(--positive); font-weight: 600; }
+  .neg { color: var(--negative); font-weight: 600; }
+
+  /* === CALLOUT === */
+  .callout {
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    padding: 24px 28px;
+    border-radius: 4px;
+    margin: 32px 0;
+  }
+
+  .callout-title {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .callout p { color: var(--text); margin: 0; font-size: 16px; }
+  .callout p + p { margin-top: 12px; }
+
+  .callout-warning {
+    background: var(--warning-soft);
+    border-left-color: var(--warning);
+  }
+  .callout-warning .callout-title { color: var(--warning); }
+
+  .callout-positive {
+    background: var(--positive-soft);
+    border-left-color: var(--positive);
+  }
+  .callout-positive .callout-title { color: var(--positive); }
+
+  /* === LISTS === */
+  ul, ol {
+    margin: 16px 0 16px 24px;
+    color: var(--text-soft);
+  }
+
+  li { margin-bottom: 8px; }
+
+  /* === MATRIX === */
+  .matrix {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px;
+    margin: 32px 0;
+    position: relative;
+    aspect-ratio: 1.4 / 1;
+    max-width: 700px;
+  }
+
+  .matrix-grid {
+    position: relative;
+    height: 100%;
+    border-left: 1px solid var(--border-strong);
+    border-bottom: 1px solid var(--border-strong);
+  }
+
+  .matrix-axis-y {
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: rotate(-90deg) translateX(50%);
+    transform-origin: left center;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .matrix-axis-x {
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .matrix-divider-h {
+    position: absolute;
+    left: 0; right: 0;
+    top: 50%;
+    border-top: 1px dashed var(--border);
+  }
+
+  .matrix-divider-v {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    border-left: 1px dashed var(--border);
+  }
+
+  .matrix-point {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .matrix-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  .matrix-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .matrix-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  /* === FUNNEL === */
+  .funnel {
+    margin: 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .funnel-step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 24px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+  }
+
+  .funnel-step::after {
+    content: '↓';
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-muted);
+    font-size: 18px;
+  }
+
+  .funnel-step:last-child::after { display: none; }
+
+  .funnel-step.s1 { width: 100%; background: #f7f5ef; }
+  .funnel-step.s2 { width: 85%; }
+  .funnel-step.s3 { width: 70%; }
+  .funnel-step.s4 { width: 55%; background: var(--accent-soft); }
+  .funnel-step.s5 { width: 40%; background: var(--positive-soft); font-weight: 600; }
+
+  /* === BAR CHART === */
+  .bar-chart {
+    margin: 24px 0;
+  }
+
+  .bar-row {
+    display: grid;
+    grid-template-columns: 140px 1fr 100px;
+    gap: 16px;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .bar-label { color: var(--text-soft); }
+
+  .bar-track {
+    background: #f0ede6;
+    border-radius: 4px;
+    height: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), #2d5680);
+    border-radius: 4px;
+    transition: width 0.3s;
+  }
+
+  .bar-fill.alt {
+    background: linear-gradient(90deg, var(--positive), #3d6e4f);
+  }
+
+  .bar-value {
+    text-align: right;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--text);
+  }
+
+  /* === DIVIDERS === */
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 60px 0;
+  }
+
+  /* === TWO COL === */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin: 24px 0;
+  }
+
+  .col-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px;
+  }
+
+  .col-card h4 {
+    margin-top: 0;
+    font-size: 18px;
+    color: var(--accent);
+  }
+
+  .col-card ul { margin-left: 20px; }
+
+  /* === FOOTER === */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 0 60px;
+    margin-top: 80px;
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    .cover h1 { font-size: 36px; }
+    .cover .subtitle { font-size: 18px; }
+    .cover { padding: 60px 0 50px; }
+    .toc ol { columns: 1; }
+    .two-col { grid-template-columns: 1fr; }
+    h2 { font-size: 28px; }
+    .matrix { aspect-ratio: auto; height: 500px; }
+    .bar-row { grid-template-columns: 100px 1fr 80px; font-size: 13px; }
+  }
+
+  @media print {
+    body { font-size: 11pt; }
+    section { page-break-inside: avoid; }
+    .toc { page-break-after: always; }
+    h2 { page-break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<header class="cover">
+  <div class="container">
+    <div class="cover-eyebrow">Конкурентный аудит · SEO + Paid Acquisition</div>
+    <h1>Анализ рынка Custom Orthotics</h1>
+    <p class="subtitle">Конкурентная разведка: Upstep против StrideSoles. Стратегические возможности входа на рынок ортопедических стелек прямого потребления.</p>
+    <div class="cover-meta">
+      <div><strong>Период данных</strong>2026-05-01</div>
+      <div><strong>Источники</strong>8 CSV-экспортов · Live crawl</div>
+      <div><strong>Объём данных</strong>~30 000 строк</div>
+      <div><strong>Формат</strong>Executive Brief</div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- TOC -->
+<nav class="toc">
+  <div class="toc-title">Содержание</div>
+  <ol>
+    <li><a href="#s1"><span class="num">01</span>Резюме для руководства</a></li>
+    <li><a href="#s2"><span class="num">02</span>Методология и ограничения</a></li>
+    <li><a href="#s3"><span class="num">03</span>Обзор рынка</a></li>
+    <li><a href="#s4"><span class="num">04</span>Обзор трафика</a></li>
+    <li><a href="#s5"><span class="num">05</span>Распределение по каналам</a></li>
+    <li><a href="#s6"><span class="num">06</span>Глубокий анализ SEO</a></li>
+    <li><a href="#s7"><span class="num">07</span>Стратегия ключевых слов</a></li>
+    <li><a href="#s8"><span class="num">08</span>Анализ платного трафика</a></li>
+    <li><a href="#s9"><span class="num">09</span>Профиль обратных ссылок</a></li>
+    <li><a href="#s10"><span class="num">10</span>Технический SEO-аудит</a></li>
+    <li><a href="#s11"><span class="num">11</span>Конкурентное позиционирование</a></li>
+    <li><a href="#s12"><span class="num">12</span>Возможности входа на рынок</a></li>
+    <li><a href="#s13"><span class="num">13</span>SEO-стратегия входа</a></li>
+    <li><a href="#s14"><span class="num">14</span>Google Ads стратегия</a></li>
+    <li><a href="#s15"><span class="num">15</span>Прогнозы</a></li>
+    <li><a href="#s16"><span class="num">16</span>Финальные рекомендации</a></li>
+  </ol>
+</nav>
+
+<!-- 1 EXECUTIVE SUMMARY -->
+<section id="s1">
+  <div class="section-eyebrow">Раздел 01</div>
+  <h2>Резюме для руководства</h2>
+  <p>На рынке direct-to-consumer custom orthotics существует чёткий разрыв между двумя игроками. <strong>Upstep</strong> построил SEO-машину на широком медицинском TOFU. <strong>StrideSoles</strong> значительно меньше по органике, но имеет более сильное conversion-предложение на главной странице (3D-сканирование, gait analysis, APMA, $249, доставка 10–15 дней).</p>
+
+  <h3>Ключевые метрики</h3>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi-label">Органика Upstep</div>
+      <div class="kpi-value">147 187</div>
+      <div class="kpi-sub">визитов в месяц</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Органика Stride</div>
+      <div class="kpi-value">4 160</div>
+      <div class="kpi-sub">визитов в месяц</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Разрыв в SEO</div>
+      <div class="kpi-value">35×</div>
+      <div class="kpi-sub">в пользу Upstep</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Paid рост Upstep</div>
+      <div class="kpi-value kpi-positive">+70.2%</div>
+      <div class="kpi-sub">snapshot change</div>
+    </div>
+  </div>
+
+  <h3>Три главных вывода</h3>
+  <ol>
+    <li><strong>Upstep выигрывает масштабом</strong>, но имеет слабую шаблонную дисциплину: sale-first заголовки, дублирование блоков на главной, орфографическая ошибка «Plantar Faciitis» в навигации.</li>
+    <li><strong>StrideSoles выигрывает оффером</strong>, но технически слаб — несколько URL рендерятся с одинаковым LP-шаблоном «Custom Orthotics and Insoles with Gait Analysis», почти весь paid-трафик ведётся на homepage без keyword-to-page архитектуры.</li>
+    <li><strong>Пространство для нового бренда открыто</strong> через high-intent paid + commercial SEO, а не через ещё один «блог про боль в ногах».</li>
+  </ol>
+
+  <div class="callout">
+    <div class="callout-title">Стратегическая рекомендация</div>
+    <p>Гибридная модель: <strong>Google Ads на generic + high-intent core кластерах</strong> для быстрых сигналов (2–4 недели) + <strong>SEO-стек из money pages и commercial content</strong> для compounding ROI (4–6 месяцев). Избегать соблазна сразу строить TOFU-блог-конкурент Upstep.</p>
+  </div>
+</section>
+
+<!-- 2 METHODOLOGY -->
+<section id="s2">
+  <div class="section-eyebrow">Раздел 02</div>
+  <h2>Методология и ограничения</h2>
+
+  <h3>Проверенные данные</h3>
+  <p>Загружено и распарсено <strong>8 CSV-файлов</strong> в формате UTF-16 TSV:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Файл</th><th class="num">Строк</th><th>Содержание</th></tr></thead>
+      <tbody>
+        <tr><td>upstep_organic_keywords</td><td class="num">27 359</td><td>Органические ключи, трафик, позиции</td></tr>
+        <tr><td>upstep_paid_keywords</td><td class="num">102</td><td>Платные ключи, CPC, paid traffic, URL</td></tr>
+        <tr><td>upstep_ads_creatives</td><td class="num">157</td><td>Креативы, current/previous traffic</td></tr>
+        <tr><td>upstep_backlinks</td><td class="num">653</td><td>Backlink profile, DR, anchors, targets</td></tr>
+        <tr><td>stridesoles_organic_keywords</td><td class="num">1 684</td><td>Органические ключи, current/previous traffic</td></tr>
+        <tr><td>stridesoles_paid_keywords</td><td class="num">5</td><td>Платные ключи, CPC, paid traffic, URL</td></tr>
+        <tr><td>stridesoles_ads_creatives</td><td class="num">17</td><td>Креативы, current/previous traffic</td></tr>
+        <tr><td>stridesoles_backlinks</td><td class="num">98</td><td>Backlink profile, DR, anchors, targets</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>Внутренняя консистентность:</strong> сумма paid traffic по keywords vs. ad creatives — Upstep 1 918 против 1 914, Stride 162 против 161 (совпадает).</p>
+
+  <h3>Ограничения</h3>
+  <ul>
+    <li>Домен бренда заказчика не указан → пересечение «конкурент ↔ ваш бренд» невозможно посчитать точно</li>
+    <li>GSC / GA4 / Google Ads account data недоступны</li>
+    <li>Campaign names в paid-экспортах отсутствуют → структура кампаний <strong>выведена</strong> из ключей и LP</li>
+    <li>Для Upstep нет исторического organic trend → только current snapshot</li>
+  </ul>
+
+  <h3>Допущения</h3>
+  <ul>
+    <li><strong>AOV = $245</strong> (midpoint между $239 в Upstep product pages и $249 в StrideSoles hero)</li>
+    <li>Без учёта апселов и повторных покупок</li>
+  </ul>
+</section>
+
+<!-- 3 MARKET OVERVIEW -->
+<section id="s3">
+  <div class="section-eyebrow">Раздел 03</div>
+  <h2>Обзор рынка</h2>
+
+  <h3>Позиционирование конкурентов</h3>
+  <div class="two-col">
+    <div class="col-card">
+      <h4>Upstep</h4>
+      <ul>
+        <li>Sale-first коммуникация: 50–70% OFF, FSA/HSA, 180-day guarantee</li>
+        <li>Impression kit (12–18 business days после слепка)</li>
+        <li>Цена $239 на product pages</li>
+        <li>Большое социальное доказательство и testimonials</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <h4>StrideSoles</h4>
+      <ul>
+        <li>Trust-first коммуникация: 3D scan, gait analysis, APMA, clinician proof</li>
+        <li>Quiz + smartphone 3D scan + gait video</li>
+        <li>Цена $249 в hero-блоке</li>
+        <li>Доставка 10–15 дней, mobile-first workflow</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Вертикали спроса</h3>
+  <p>Рынок делится на 6 практических кластеров:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Кластер</th><th class="num">Observable organic traffic</th><th>Стратегическая ценность</th></tr></thead>
+      <tbody>
+        <tr><td>Pain & conditions</td><td class="num">117 912</td><td>Большой TOFU, дорого строить</td></tr>
+        <tr><td>Condition + product</td><td class="num">15 838</td><td>Лучший компромисс intent / масштаб</tr>
+        <tr><td>Core orthotics</td><td class="num">6 333</td><td><span class="highlight">Must-win для revenue</span></td></tr>
+        <tr><td>Brand-comparison content</td><td class="num">2 842</td><td>Mid-funnel, conquest</td></tr>
+        <tr><td>Footwear / sport</td><td class="num">2 360</td><td>LP segmentation</td></tr>
+        <tr><td>Policy / decision-friction</td><td class="num">632</td><td>Малый, но очень «горячий»</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 4 TRAFFIC OVERVIEW -->
+<section id="s4">
+  <div class="section-eyebrow">Раздел 04</div>
+  <h2>Обзор трафика</h2>
+
+  <div class="bar-chart">
+    <h4>Органический трафик в месяц</h4>
+    <div class="bar-row">
+      <div class="bar-label">Upstep</div>
+      <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
+      <div class="bar-value">147 187</div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">StrideSoles</div>
+      <div class="bar-track"><div class="bar-fill" style="width: 2.8%;"></div></div>
+      <div class="bar-value">4 160</div>
+    </div>
+
+    <h4 style="margin-top: 32px;">Платный трафик в месяц</h4>
+    <div class="bar-row">
+      <div class="bar-label">Upstep</div>
+      <div class="bar-track"><div class="bar-fill alt" style="width: 100%;"></div></div>
+      <div class="bar-value">1 918</div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">StrideSoles</div>
+      <div class="bar-track"><div class="bar-fill alt" style="width: 8.4%;"></div></div>
+      <div class="bar-value">162</div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Метрика</th><th class="num">Upstep</th><th class="num">StrideSoles</th></tr></thead>
+      <tbody>
+        <tr><td>Organic traffic / мес</td><td class="num highlight">147 187</td><td class="num highlight">4 160</td></tr>
+        <tr><td>Paid traffic / мес</td><td class="num">1 918</td><td class="num">162</td></tr>
+        <tr><td>Organic keywords</td><td class="num">27 359</td><td class="num">1 684</td></tr>
+        <tr><td>Non-brand organic</td><td class="num">143 027</td><td class="num">2 890</td></tr>
+        <tr><td>Brand organic</td><td class="num">4 160</td><td class="num">1 270</td></tr>
+        <tr><td>Non-brand paid</td><td class="num">990</td><td class="num">36</td></tr>
+        <tr><td>Brand paid</td><td class="num">928</td><td class="num">126</td></tr>
+        <tr><td>Organic snapshot change</td><td class="num">н/д</td><td class="num neg">−3.9%</td></tr>
+        <tr><td>Paid snapshot change</td><td class="num pos">+70.2%</td><td class="num">н/д</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">Инсайт</div>
+    <p><strong>Upstep:</strong> 98.7% трафика — органика. SEO moat построен.</p>
+    <p><strong>StrideSoles:</strong> трафик скромнее и <strong>упал на 3.9%</strong>. Brand-зависимость высокая.</p>
+    <p><strong>Paid у обоих — недоработанный канал.</strong> У Stride 77.8% paid — бренд. У Upstep 48.4% — тоже бренд. Пространство для non-brand paid существует.</p>
+  </div>
+</section>
+
+<!-- 5 CHANNEL MIX -->
+<section id="s5">
+  <div class="section-eyebrow">Раздел 05</div>
+  <h2>Распределение по каналам</h2>
+
+  <h3>Распределение по intent</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Канал</th>
+          <th class="num">Informational</th>
+          <th class="num">Commercial</th>
+          <th class="num">Transactional</th>
+          <th class="num">Brand</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Upstep organic</td><td class="num">88.7%</td><td class="num">8.2%</td><td class="num">0.35%</td><td class="num">2.8%</td></tr>
+        <tr><td>Stride organic</td><td class="num">52.5%</td><td class="num">14.6%</td><td class="num">2.4%</td><td class="num neg">30.5%</td></tr>
+        <tr><td>Upstep paid</td><td class="num">5.1%</td><td class="num">34.6%</td><td class="num">11.9%</td><td class="num">48.4%</td></tr>
+        <tr><td>Stride paid</td><td class="num">0%</td><td class="num">6.2%</td><td class="num">16.1%</td><td class="num neg">77.8%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Стратегическое различие</h3>
+  <ul>
+    <li><strong>Upstep SEO</strong> = TOFU engine, монетизируется через внутреннюю перелинковку и product pages</li>
+    <li><strong>Stride SEO</strong> = бренд + точечные wins без масштаба</li>
+    <li><strong>Paid у обоих</strong> сильно «съедается» брендом и conquest-трафиком</li>
+  </ul>
+</section>
+
+<!-- 6 SEO DEEP DIVE -->
+<section id="s6">
+  <div class="section-eyebrow">Раздел 06</div>
+  <h2>Глубокий анализ SEO</h2>
+
+  <h3>Топ non-brand органические ключи — Upstep</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Ключ</th><th class="num">Volume</th><th class="num">Organic traffic</th><th>Intent</th></tr></thead>
+      <tbody>
+        <tr><td>shin splints</td><td class="num">211 000</td><td class="num">4 201</td><td>informational</td></tr>
+        <tr><td>sciatic nerve pain</td><td class="num">161 000</td><td class="num">2 641</td><td>informational</td></tr>
+        <tr><td>custom orthotics</td><td class="num">7 390</td><td class="num highlight">1 303</td><td><span class="highlight">commercial</span></td></tr>
+        <tr><td>pain on top of foot</td><td class="num">23 560</td><td class="num">1 286</td><td>informational</td></tr>
+        <tr><td>heel pain</td><td class="num">75 830</td><td class="num">1 135</td><td>informational</td></tr>
+        <tr><td>metatarsalgia</td><td class="num">75 800</td><td class="num">1 065</td><td>informational</td></tr>
+        <tr><td>top of foot pain</td><td class="num">24 960</td><td class="num">1 003</td><td>informational</td></tr>
+        <tr><td>home remedies for burning feet</td><td class="num">13 470</td><td class="num">895</td><td>informational</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Топ non-brand органические ключи — StrideSoles</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Ключ</th><th class="num">Volume</th><th class="num">Organic traffic</th><th>Intent</th></tr></thead>
+      <tbody>
+        <tr><td>how to relieve foot pain in 30 seconds</td><td class="num">2 400</td><td class="num">258</td><td>informational</td></tr>
+        <tr><td>are birkenstocks good for flat feet</td><td class="num">700</td><td class="num">101</td><td>informational</td></tr>
+        <tr><td>are birkenstocks good for your feet</td><td class="num">3 600</td><td class="num">89</td><td>informational</td></tr>
+        <tr><td>how to wash hey dudes</td><td class="num">4 000</td><td class="num">62</td><td>informational</td></tr>
+        <tr><td>how to clean hey dude insoles</td><td class="num">150</td><td class="num">58</td><td>informational</td></tr>
+        <tr><td>can you join the military with flat feet</td><td class="num">1 000</td><td class="num">41</td><td>informational</td></tr>
+        <tr><td>best custom orthotics</td><td class="num">310</td><td class="num highlight">27</td><td><span class="highlight">commercial</span></td></tr>
+        <tr><td>hoka for flat feet</td><td class="num">400</td><td class="num">25</td><td>informational</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Пересечение ключей конкурентов</h3>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi-label">Exact overlap</div>
+      <div class="kpi-value">769</div>
+      <div class="kpi-sub">общих ключей</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Jaccard similarity</div>
+      <div class="kpi-value">2.7%</div>
+      <div class="kpi-sub">organic</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Stride traffic из overlap</div>
+      <div class="kpi-value">43.3%</div>
+      <div class="kpi-sub">высокая зависимость</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Upstep traffic из overlap</div>
+      <div class="kpi-value">7.8%</div>
+      <div class="kpi-sub">широкий космос</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">Вывод</div>
+    <p>Stride борется в узком ядре, которое Upstep уже покрывает. Upstep живёт значительно более широким SEO-космосом. Для нового игрока можно не лезть сразу в 27K-keyword moat.</p>
+  </div>
+</section>
+
+<!-- 7 KEYWORD STRATEGY -->
+<section id="s7">
+  <div class="section-eyebrow">Раздел 07</div>
+  <h2>Стратегия ключевых слов</h2>
+
+  <h3>Приоритетные кластеры для входа</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Приоритет</th><th>Кластер</th><th>Почему</th></tr></thead>
+      <tbody>
+        <tr><td><span class="highlight">Highest</span></td><td>custom orthotics / custom insoles / orthotics online</td><td>прямой revenue intent</td></tr>
+        <tr><td><span class="highlight">Highest</span></td><td>custom insoles near me / cost / insurance</td><td>lower-funnel friction killers</td></tr>
+        <tr><td>High</td><td>flat feet / plantar fasciitis / overpronation / heel pain + product modifiers</td><td>сильный mid-bottom funnel</td></tr>
+        <tr><td>High</td><td>work boots / running / cycling / dress shoes / sandals</td><td>даёт LP segmentation</td></tr>
+        <tr><td>Medium</td><td>competitors & alternatives</td><td>conquest и comparison layer</td></tr>
+        <tr><td>Later</td><td>broad pain-content</td><td>длинный ROI, но большой масштаб</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Последовательность захвата</h3>
+  <ol>
+    <li>Core orthotics + Condition+product + Policy / decision friction</li>
+    <li>Footwear / sport LPs</li>
+    <li>Широкий TOFU pain-content (только после стабилизации revenue)</li>
+  </ol>
+</section>
+
+<!-- 8 PAID -->
+<section id="s8">
+  <div class="section-eyebrow">Раздел 08</div>
+  <h2>Анализ платного трафика</h2>
+
+  <h3>Метрики платного канала</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Метрика</th><th class="num">Upstep</th><th class="num">StrideSoles</th></tr></thead>
+      <tbody>
+        <tr><td>Paid keywords</td><td class="num">102</td><td class="num">5</td></tr>
+        <tr><td>Активные LP с трафиком</td><td class="num">3</td><td class="num neg">1 (homepage)</td></tr>
+        <tr><td>Lower-bound spend</td><td class="num">$5 515</td><td class="num">$102</td></tr>
+        <tr><td>Adjusted spend</td><td class="num">~$5 579</td><td class="num">~$459</td></tr>
+        <tr><td>Brand paid share</td><td class="num">48.4%</td><td class="num neg">77.8%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Топ paid keywords — Upstep</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Ключ</th><th class="num">Volume</th><th class="num">CPC</th><th class="num">Paid traffic</th><th>Landing page</th></tr></thead>
+      <tbody>
+        <tr><td>upstep</td><td class="num">4 200</td><td class="num">$5.00</td><td class="num">889</td><td>/</td></tr>
+        <tr><td>insoles for shoes</td><td class="num">6 300</td><td class="num">$0.52</td><td class="num">484</td><td>/lps/hp3</td></tr>
+        <tr><td>custom insoles near me</td><td class="num">1 100</td><td class="num">$1.82</td><td class="num">92</td><td>/lps/hp3</td></tr>
+        <tr><td>custom orthotics online</td><td class="num">200</td><td class="num">$2.87</td><td class="num">65</td><td>/</td></tr>
+        <tr><td>good feet arch supports</td><td class="num">450</td><td class="num">$0.35</td><td class="num">62</td><td>/</td></tr>
+        <tr><td>custom orthotics for flat feet</td><td class="num">600</td><td class="num">$1.89</td><td class="num">40</td><td>/</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Топ paid keywords — StrideSoles</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Ключ</th><th class="num">Volume</th><th class="num">CPC</th><th class="num">Paid traffic</th><th>Landing page</th></tr></thead>
+      <tbody>
+        <tr><td>stride soles</td><td class="num">1 900</td><td class="num">н/д</td><td class="num">126</td><td>/</td></tr>
+        <tr><td>custom orthotics online</td><td class="num">200</td><td class="num">$2.87</td><td class="num">26</td><td>/</td></tr>
+        <tr><td>best custom insoles</td><td class="num">200</td><td class="num">$2.99</td><td class="num">7</td><td>/</td></tr>
+        <tr><td>custom boot insoles</td><td class="num">90</td><td class="num">$1.81</td><td class="num">2</td><td>/</td></tr>
+        <tr><td>custom insoles plantar fasciitis</td><td class="num">20</td><td class="num">$2.76</td><td class="num">1</td><td>/</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Экономика paid clusters</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Кластер</th>
+          <th class="num">Keywords</th>
+          <th class="num">Search volume</th>
+          <th class="num">Paid traffic</th>
+          <th class="num">Weighted CPC</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Conquest / Brand</td><td class="num">22</td><td class="num">8 290</td><td class="num">1 216</td><td class="num neg">$4.24</td></tr>
+        <tr><td>Generic core</td><td class="num">42</td><td class="num">8 500</td><td class="num">564</td><td class="num pos">$0.76</td></tr>
+        <tr><td>High-intent core</td><td class="num">14</td><td class="num">1 980</td><td class="num">221</td><td class="num">$2.23</td></tr>
+        <tr><td>Condition-led</td><td class="num">14</td><td class="num">1 550</td><td class="num">44</td><td class="num">$1.89</td></tr>
+        <tr><td>Use-case / footwear</td><td class="num">5</td><td class="num">440</td><td class="num">21</td><td class="num">$1.83</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-positive">
+    <div class="callout-title">Инсайт</div>
+    <p>Самый дорогой сегмент — бренд / conquest, но он не должен быть стартовым приоритетом. Для входа рациональнее покупать <strong>generic core</strong> (самый дешёвый доказательный paid demand) → <strong>high-intent core</strong> → <strong>condition-led</strong>.</p>
+  </div>
+</section>
+
+<!-- 9 BACKLINKS -->
+<section id="s9">
+  <div class="section-eyebrow">Раздел 09</div>
+  <h2>Профиль обратных ссылок</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Метрика</th><th class="num">Upstep</th><th class="num">StrideSoles</th></tr></thead>
+      <tbody>
+        <tr><td>Backlink rows</td><td class="num">653</td><td class="num">98</td></tr>
+        <tr><td>Avg Domain Rating</td><td class="num">20.9</td><td class="num pos">37.7</td></tr>
+        <tr><td>Median DR</td><td class="num">9</td><td class="num pos">35</td></tr>
+        <tr><td>Dofollow share</td><td class="num pos">51.1%</td><td class="num">40.8%</td></tr>
+        <tr><td>Content-link share</td><td class="num pos">56.7%</td><td class="num">37.8%</td></tr>
+        <tr><td>Unique target URLs</td><td class="num pos">171</td><td class="num">20</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Инсайт</h3>
+  <ul>
+    <li><strong>Upstep:</strong> большой footprint, но <span class="neg">более низкое качество</span> и «шумный» профиль</li>
+    <li><strong>Stride:</strong> меньше ссылок, но <span class="pos">более высокое среднее качество</span></li>
+    <li>У обоих видны <strong>подозрительные testimonial-style anchors</strong> (признак покупки через link vendors)</li>
+  </ul>
+
+  <div class="callout callout-positive">
+    <div class="callout-title">Возможность</div>
+    <p>Рынок не «white-hat clean». Новый бренд может выиграть <strong>качеством структуры, уникальностью страниц и более чистым digital PR</strong>, а не только объёмом.</p>
+  </div>
+</section>
+
+<!-- 10 TECH AUDIT -->
+<section id="s10">
+  <div class="section-eyebrow">Раздел 10</div>
+  <h2>Технический SEO-аудит</h2>
+
+  <h3>StrideSoles — критические проблемы</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Проблема</th><th>Пример</th><th>Риск</th></tr></thead>
+      <tbody>
+        <tr><td>Шаблонное дублирование title / H1</td><td><code>/blogs/articles/insoles-for-ball-of-foot-pain</code>, <code>/blogs/articles/what-are-orthotics-1</code>, <code>/blogs/articles/7-best-insoles-for-hip-pain</code> рендерятся с одинаковым заголовком</td><td><span class="neg">title rewrites, canonical ambiguity</span></td></tr>
+        <tr><td>Multi-H1 на homepage</td><td>Founder story имеет отдельный крупный заголовок <code># custom orthotics and insoles</code></td><td><span class="neg">unclear main title</span></td></tr>
+        <tr><td>Неоднородная URL-структура</td><td>Одновременно <code>/pages/</code>, <code>/products/</code>, <code>/p/</code>, <code>/blogs/articles/</code></td><td>дублирование, page type confusion</td></tr>
+        <tr><td>Paid traffic на homepage</td><td>100% paid → homepage без LP segmentation</td><td><span class="neg">низкая ad relevance</span></td></tr>
+        <tr><td>Повторяющиеся testimonial-блоки</td><td>Те же врачи и цитаты несколько раз</td><td>DOM noise</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Upstep — менее критические, но есть</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Проблема</th><th>Пример</th><th>Риск</th></tr></thead>
+      <tbody>
+        <tr><td>Sale-first title</td><td>«Custom Orthotics | Save up to 70% on Upstep Insoles»</td><td>частые title rewrites при смене промо</td></tr>
+        <tr><td>Орфографическая ошибка</td><td>«Plantar Faciitis» в навигации vs «Plantar Fasciitis» в контенте</td><td>слабый template QA</td></tr>
+        <tr><td>Дублирование блоков</td><td>Klarna / installments + FSA/HSA повторяются на homepage</td><td>DOM bloat</td></tr>
+        <tr><td>Legacy URL footprint</td><td><code>/a/blog/</code>, <code>/a/community/</code>, <code>/en/custom-multi-sport-orthotic.html</code></td><td>нужен canonical + locale audit</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Quick fixes по приоритетам</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Приоритет</th><th>Действие</th><th>Эффект</th></tr></thead>
+      <tbody>
+        <tr><td><span class="neg">High</span></td><td>Унификация title / H1 в Stride blog templates</td><td>− duplicate / cannibalization risk</td></tr>
+        <tr><td><span class="neg">High</span></td><td>Развести Stride paid на отдельные LP</td><td>+ ad relevance, + Quality Score</td></tr>
+        <tr><td><span class="neg">High</span></td><td>Canonical audit Stride route mix</td><td>− index noise</td></tr>
+        <tr><td><span class="neg">High</span></td><td>Почистить дубликаты на Upstep homepage</td><td>+ LP clarity</td></tr>
+        <tr><td>Medium</td><td>Исправить «Plantar Faciitis»</td><td>+ шаблонное качество</td></tr>
+        <tr><td>Medium</td><td>Проверить legacy <code>/en/</code> URL Upstep</td><td>убрать дублированный footprint</td></tr>
+        <tr><td>Medium</td><td>Снизить sale-first boilerplate в Upstep</td><td>стабилизирует search appearance</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 11 POSITIONING -->
+<section id="s11">
+  <div class="section-eyebrow">Раздел 11</div>
+  <h2>Конкурентное позиционирование</h2>
+
+  <p>Матрица «Масштаб трафика × Brand Authority» показывает, что Upstep и Stride занимают противоположные углы рынка. Это создаёт диагональный коридор для нового игрока.</p>
+
+  <div class="matrix">
+    <div class="matrix-grid">
+      <div class="matrix-axis-y">Brand Authority</div>
+      <div class="matrix-axis-x">Масштаб трафика</div>
+      <div class="matrix-divider-h"></div>
+      <div class="matrix-divider-v"></div>
+
+      <div class="matrix-point" style="left: 25%; top: 25%;">
+        <div class="matrix-dot" style="background: var(--accent);"></div>
+        <div class="matrix-label">StrideSoles</div>
+        <div class="matrix-sub">Challenger<br>DR 37.7 · 4 160 organic<br>сильный оффер</div>
+      </div>
+
+      <div class="matrix-point" style="left: 80%; top: 70%;">
+        <div class="matrix-dot" style="background: var(--negative);"></div>
+        <div class="matrix-label">Upstep</div>
+        <div class="matrix-sub">Market Leader<br>DR 20.9 · 147K organic<br>SEO moat, sale-first</div>
+      </div>
+
+      <div class="matrix-point" style="left: 18%; top: 78%;">
+        <div class="matrix-dot" style="background: var(--positive); width: 20px; height: 20px; border-style: dashed; border-color: var(--positive);"></div>
+        <div class="matrix-label">Ваш бренд</div>
+        <div class="matrix-sub">точка входа<br>растёт по диагонали</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">Вектор роста</div>
+    <p><strong>Ваш бренд</strong> заходит в нижний левый квадрант. Путь роста — вправо (через трафик) или вверх (через authority / качество оффера). Stride выбрал вверх, Upstep — вправо. <strong>Гибридная стратегия позволит двигаться по диагонали.</strong></p>
+  </div>
+</section>
+
+<!-- 12 OPPORTUNITIES -->
+<section id="s12">
+  <div class="section-eyebrow">Раздел 12</div>
+  <h2>Возможности входа на рынок</h2>
+
+  <h3>Четыре стратегических angle</h3>
+
+  <div class="two-col">
+    <div class="col-card">
+      <h4>1. Long-tail SEO gaps</h4>
+      <p>Кластер condition+product (15 838 трафика) недостаточно проработан. Stride там слабый, Upstep распылён на TOFU.</p>
+    </div>
+
+    <div class="col-card">
+      <h4>2. Underserved content clusters</h4>
+      <ul>
+        <li>Decision-friction / policy (FSA/HSA, insurance, near me, cost) — всего 632 observable traffic, но очень «горячий» intent</li>
+        <li>Footwear / use-case LPs (2 360) — слабая конкурентная плотность</li>
+      </ul>
+    </div>
+
+    <div class="col-card">
+      <h4>3. Paid acquisition arbitrage</h4>
+      <ul>
+        <li>Generic core: weighted CPC <strong>$0.76</strong> → самый дешёвый вход</li>
+        <li><strong>14 220 monthly search volume</strong> в unique non-brand paid keywords (помимо того, что уже куплено конкурентами)</li>
+      </ul>
+    </div>
+
+    <div class="col-card">
+      <h4>4. Brand differentiation</h4>
+      <ul>
+        <li>Trust-first как у Stride (3D scan, clinician proof, APMA) <strong>+</strong> sale-mechanics как у Upstep (FSA/HSA, guarantee, financing) в одном оффере</li>
+        <li>Более чистый link profile как diff vs обоих</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 13 SEO STRATEGY -->
+<section id="s13">
+  <div class="section-eyebrow">Раздел 13</div>
+  <h2>SEO-стратегия входа</h2>
+
+  <h3>Последовательность фаз</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Фаза</th><th>Месяцы</th><th>Фокус</th></tr></thead>
+      <tbody>
+        <tr><td>Foundation</td><td>0–2</td><td>Technical SEO, keyword map, IA, money pages</td></tr>
+        <tr><td>Commercial layer</td><td>2–4</td><td>Condition+product hub pages, insurance / cost / near-me</td></tr>
+        <tr><td>Segmentation</td><td>4–6</td><td>Footwear / sport LPs, use-case content</td></tr>
+        <tr><td>Authority</td><td>4–9</td><td>Digital PR, link acquisition, schema, internal linking</td></tr>
+        <tr><td>Scale</td><td>6–12+</td><td>TOFU pain-content только после стабилизации revenue</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Ожидаемые сроки</h3>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi-label">Первые wins</div>
+      <div class="kpi-value">2–3</div>
+      <div class="kpi-sub">месяцев — индексация и ranking</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Pipeline impact</div>
+      <div class="kpi-value">4–6</div>
+      <div class="kpi-sub">месяцев — ощутимый вклад</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Compounding ROI</div>
+      <div class="kpi-value">6–9</div>
+      <div class="kpi-sub">месяцев — нормальный режим</div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 ADS STRATEGY -->
+<section id="s14">
+  <div class="section-eyebrow">Раздел 14</div>
+  <h2>Google Ads стратегия</h2>
+
+  <h3>Структура кампаний (рекомендуемая)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Кампания</th><th class="num">Приоритет</th><th class="num">Доля бюджета</th><th class="num">CPC</th></tr></thead>
+      <tbody>
+        <tr><td>Generic core</td><td class="num">1</td><td class="num">40%</td><td class="num pos">$0.76</td></tr>
+        <tr><td>High-intent core</td><td class="num">2</td><td class="num">30%</td><td class="num">$2.23</td></tr>
+        <tr><td>Condition-led</td><td class="num">3</td><td class="num">20%</td><td class="num">$1.89</td></tr>
+        <tr><td>Test / retargeting / conquest</td><td class="num">4</td><td class="num">10%</td><td class="num">varies</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="two-col">
+    <div class="col-card" style="border-left: 4px solid var(--negative);">
+      <h4 style="color: var(--negative);">Что НЕ делать на старте</h4>
+      <ul>
+        <li>Brand defense (ещё нет brand search volume)</li>
+        <li>Conquest на Upstep / Stride (CPC $4.24, низкий Quality Score)</li>
+        <li>Broad match без negatives</li>
+        <li>Single LP для всех ключей</li>
+      </ul>
+    </div>
+
+    <div class="col-card" style="border-left: 4px solid var(--positive);">
+      <h4 style="color: var(--positive);">Что ОБЯЗАТЕЛЬНО сделать</h4>
+      <ul>
+        <li>3 dedicated LP под core / near-me / plantar fasciitis</li>
+        <li>Отдельный ad copy под каждый кластер</li>
+        <li>Conversion tracking QA до запуска</li>
+        <li>Negative keywords list (DIY, free, used)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Ожидаемые сроки</h3>
+  <ul>
+    <li><strong>2–4 недели:</strong> первые рабочие сигналы по CPA / CVR</li>
+    <li><strong>6–8 недель:</strong> решение о масштабировании</li>
+  </ul>
+</section>
+
+<!-- 15 FORECASTS -->
+<section id="s15">
+  <div class="section-eyebrow">Раздел 15</div>
+  <h2>Прогнозы</h2>
+
+  <h3>SEO Forecast (Month 12 run-rate)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Сценарий</th>
+          <th class="num">Visits / мес</th>
+          <th class="num">Lead rate</th>
+          <th class="num">Leads</th>
+          <th class="num">Order rate</th>
+          <th class="num">Orders</th>
+          <th class="num">Revenue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Conservative</td><td class="num">900</td><td class="num">3.0%</td><td class="num">27</td><td class="num">0.8%</td><td class="num">7</td><td class="num">$1 715</td></tr>
+        <tr><td>Likely</td><td class="num">1 800</td><td class="num">5.0%</td><td class="num">90</td><td class="num">1.5%</td><td class="num">27</td><td class="num highlight">$6 615</td></tr>
+        <tr><td>Best</td><td class="num">3 000</td><td class="num">7.0%</td><td class="num">210</td><td class="num">2.2%</td><td class="num">66</td><td class="num pos">$16 170</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Google Ads Forecast (на media budget $4 000 / мес)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Сценарий</th>
+          <th class="num">CPC</th>
+          <th class="num">Clicks</th>
+          <th class="num">Lead rate</th>
+          <th class="num">Leads</th>
+          <th class="num">Orders</th>
+          <th class="num">Revenue</th>
+          <th class="num">ROAS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Conservative</td><td class="num">$2.40</td><td class="num">1 667</td><td class="num">4.0%</td><td class="num">67</td><td class="num">13</td><td class="num">$3 185</td><td class="num">0.80×</td></tr>
+        <tr><td>Likely</td><td class="num">$1.90</td><td class="num">2 105</td><td class="num">7.0%</td><td class="num">147</td><td class="num">29</td><td class="num highlight">$7 105</td><td class="num pos">1.78×</td></tr>
+        <tr><td>Best</td><td class="num">$1.50</td><td class="num">2 667</td><td class="num">10.0%</td><td class="num">267</td><td class="num">53</td><td class="num pos">$12 985</td><td class="num pos">3.25×</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Доступный рынок</h3>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi-label">Non-brand organic pool</div>
+      <div class="kpi-value">145 917</div>
+      <div class="kpi-sub">кликов в месяц</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Non-brand paid pool</div>
+      <div class="kpi-value">1 026</div>
+      <div class="kpi-sub">кликов в месяц</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Untapped paid demand</div>
+      <div class="kpi-value">14 220</div>
+      <div class="kpi-sub">monthly search volume</div>
+    </div>
+  </div>
+
+  <h3>Воронка трафик → revenue</h3>
+  <div class="funnel">
+    <div class="funnel-step s1"><strong>Search demand</strong></div>
+    <div class="funnel-step s2">Google Ads core clusters &nbsp;+&nbsp; SEO commercial clusters</div>
+    <div class="funnel-step s3">Money pages &nbsp;и&nbsp; comparison pages</div>
+    <div class="funnel-step s4">Quiz / consultation / add-to-cart</div>
+    <div class="funnel-step s5">Order &nbsp;→&nbsp; Repeat / Referral</div>
+  </div>
+</section>
+
+<!-- 16 FINAL -->
+<section id="s16">
+  <div class="section-eyebrow">Раздел 16</div>
+  <h2>Финальные рекомендации</h2>
+
+  <div class="callout">
+    <div class="callout-title">Главный мессендж</div>
+    <p><strong>Upstep уже владеет масштабом в SEO. Stride имеет лучший paid-facing оффер, но слабую paid depth и техническое дублирование. Самый быстрый путь для нового бренда — Search Ads + commercial SEO stack, а не broad blog-first SEO.</strong></p>
+  </div>
+
+  <h3>Четыре принципа входа</h3>
+  <div class="two-col">
+    <div class="col-card">
+      <h4>1. Hybrid SEO + Ads</h4>
+      <p>Параллельно, не последовательно. Ads дают сигналы за недели, SEO — compounding ROI за месяцы.</p>
+    </div>
+    <div class="col-card">
+      <h4>2. High-intent first</h4>
+      <p>Money keywords с самого старта. Long-tail и broad TOFU — после доказанной экономики.</p>
+    </div>
+    <div class="col-card">
+      <h4>3. Authority early</h4>
+      <p>Чистый link profile как differentiator vs обоих конкурентов с подозрительными testimonial vendors.</p>
+    </div>
+    <div class="col-card">
+      <h4>4. Scale paid once funnel proven</h4>
+      <p>Бюджеты растут только после подтверждения CPA / CVR на тестовом периоде.</p>
+    </div>
+  </div>
+
+  <h3>Ключевые числа</h3>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi-label">Первые Ads-сигналы</div>
+      <div class="kpi-value">2–4</div>
+      <div class="kpi-sub">недели</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Первые SEO-wins</div>
+      <div class="kpi-value">2–3</div>
+      <div class="kpi-sub">месяца</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Likely Revenue M12</div>
+      <div class="kpi-value kpi-positive">$13.7K</div>
+      <div class="kpi-sub">в месяц (Ads + SEO)</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Best Case Revenue M12</div>
+      <div class="kpi-value kpi-positive">$29.2K</div>
+      <div class="kpi-sub">в месяц</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Документ подготовлен на базе CSV-экспортов от 2026-05-01 и публичного live crawl Upstep и StrideSoles.<br>
+  Все цифры — наблюдаемые метрики из предоставленных данных, без экстраполяции из внешних источников.
+</footer>
+
+</div>
+
+</body>
+</html>
